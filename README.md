@@ -1,6 +1,6 @@
 # Minimal Node.js Server Template
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mihaur/node-server-template.svg)](https://greenkeeper.io/)
 ![GitHub Actions CI](https://github.com/mihaur/node-server-template/workflows/Node%20CI/badge.svg)
 
 Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
