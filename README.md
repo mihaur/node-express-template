@@ -1,18 +1,21 @@
 # Minimal Node.js Server Template
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mihaur/node-server-template.svg)](https://greenkeeper.io/)
-![GitHub Actions CI](https://github.com/mihaur/node-server-template/workflows/Node%20CI/badge.svg)
+[![js-standard-style][standard-image]][standard-url]
+[![Conventional Commits][conventional-commits-image]][conventional-commits-url]
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+![GitHub Actions CI][github-action-node-ci-url]
 
 Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
 
-## Features
+## All features
 
-* automatic reloading via [nodemon](https://nodemon.io/)
-* linting and fixing via [standard](https://standardjs.com)
-* latest ECMAScript2015+ support via [babel 7](https://babeljs.io/)
-* tests with [mocha](https://mochajs.org/) and coverage tests by [nyc](https://github.com/istanbuljs/nyc)
-* load .env to environment via [dotenv](https://github.com/motdotla/dotenv)
-* Continuous integration via [Github Actions CI](https://github.com/features/actions)
+* automatic reloading via [nodemon][nodemon-url]
+* linting and fixing via [standard][standard-url]
+* latest ECMAScript2015+ support via [babel 7][babel-url]
+* unit and integration tests with [mocha][mocha-url], and coverage tests by [nyc][nyc-url]
+* load .env to environment via [dotenv][dotenv-url]
+* continuous integration via [Github Actions CI][github-actions-url]
+* code documentation via JSDoc [JSDoc][jsdoc-url] 
 
 ## Getting Started
 
@@ -20,8 +23,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* [node](https://nodejs.org/en/) with [npm](https://www.npmjs.com/)
-* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [node][node-url] with [npm][npm-url]
+* [git][git-book-url]
 
 ### Installing
 
@@ -43,16 +46,47 @@ To run the build use `npm run build`. Build artifacts along source maps are stor
 
 To debug build code run `npm run debug`. 
 
-Then you can attach your IDE or Chrome DevTools to a running process by appending WebSocket UUID printed to console to <chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=localhost:9229/> . See [Node.js documentation](https://nodejs.org/en/docs/guides/debugging-getting-started/) for details.
+Then you can attach your IDE or Chrome DevTools to a running process by appending WebSocket UUID printed to console to <chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=localhost:9229/> . See [Node.js documentation][node-doc-url] for details.
 
 ### Linting and code fixing
 
-Linting is done using [standard](https://standardjs.com). Use `npm run lint` to run linter. Linter output is piped trough [snazzy](https://github.com/standard/snazzy) which converts "compact" text from a linter to "stylish". You can also automatically fix linter errors by running `npm run lint:fix`.
+Linting is done using [standard][standard-url]. Use `npm run lint` to run linter. Linter output is piped trough [snazzy][snazzy-url] which converts "compact" text from a linter to "stylish". You can also automatically fix linter errors by running `npm run lint:fix`.
 
 ### Testing
 
+Tests can be run by [mocha][mocha-url]. Run `npm run test` to run both unit and integration tests. 
+
 #### Unit tests
-Unit tests are stored in test/**.spec.js and are run by [mocha](https://mochajs.org/). Run `npm run test` to run all tests. 
+Unit tests are stored in src/**.spec.js.
+
+#### Integration tests
+Integration tests are stored in test/**.spec.js.
 
 #### Coverage tests
-Run `npm run coverage` to create coverage report with  all tests. Report is generated in coverage/ directory using html formatter, from where it's served using [http-server](https://github.com/http-party/http-server) on [localhost:8080](http://localhost:8080/).
+Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using html formatter, from where it's served using [http-server][http-server-url] on [localhost:8080][localhost-url].
+
+### Documentation
+
+Run `npm run doc` to create HTML documentation from JSDoc annotations. Documentation is stored in doc/ directory, from where it's served using [http-server][http-server-url] on [localhost:8080][localhost-url].
+
+[babel-url]: https://babeljs.io/
+[conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
+[conventional-commits-url]: https://conventionalcommits.org/
+[dotenv-url]: https://github.com/motdotla/dotenv
+[git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[github-action-node-ci-url]: https://github.com/mihaur/node-server-template/workflows/Node%20CI/badge.svg
+[github-actions-url]: https://github.com/features/actions
+[greenkeeper-image]: https://badges.greenkeeper.io/mihaur/node-server-template.svg
+[greenkeeper-url]: https://greenkeeper.io/
+[http-server-url]: https://github.com/http-party/http-server
+[jsdoc-url]: https://devdocs.io/
+[localhost-url]: http://localhost:8080/
+[mocha-url]: https://mochajs.org/
+[node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[node-url]: https://nodejs.org/en/
+[nodemon-url]: https://nodemon.io/
+[npm-url]: https://www.npmjs.com/
+[nyc-url]: https://github.com/istanbuljs/nyc
+[snazzy-url]: https://github.com/standard/snazzy
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[standard-url]: http://standardjs.com/
