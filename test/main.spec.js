@@ -10,14 +10,24 @@ describe('index test', () => {
     same(response, { greeting: 'Hello, World!' })
   })
 
-  test('should greet with Hello, Joe!', async () => {
-    const response = greeter('Joe')
-    same(response, { greeting: 'Hello, Joe!' })
+  test('should greet with Hello, John!', async () => {
+    const response = greeter('John')
+    same(response, { greeting: 'Hello, John!' })
   })
 
-  test('should greet with Hello, Joe!', async () => {
-    const response = greeter('joe')
-    same(response, { greeting: 'Hello, Joe!' })
+  test('should greet with Hello, John!', async () => {
+    const response = greeter('john')
+    same(response, { greeting: 'Hello, John!' })
+  })
+
+  test('should greet with Hello, John!', async () => {
+    const response = greeter('JOHN')
+    same(response, { greeting: 'Hello, John!' })
+  })
+
+  test('should greet with Hello, John Doe', async () => {
+    const response = greeter('john doe')
+    same(response, { greeting: 'Hello, John Doe!' })
   })
 
   test('should greet with Hello, 🦉!', async () => {
@@ -26,10 +36,9 @@ describe('index test', () => {
   })
 
   test('should throw TypeError', async () => {
-    assert.throws(greeter.bind(greeter, 123), TypeError('string expected, got number'))
-  })
-
-  test('should throw TypeError', async () => {
-    assert.throws(greeter.bind(greeter, null), TypeError('string expected, got object'))
+    assert.throws(greeter.bind(greeter, 123), TypeError('wrong parameter type, string expected'))
+    assert.throws(greeter.bind(greeter, []), TypeError('wrong parameter type, string expected'))
+    assert.throws(greeter.bind(greeter, {}), TypeError('wrong parameter type, string expected'))
+    assert.throws(greeter.bind(greeter, null), TypeError('wrong parameter type, string expected'))
   })
 })

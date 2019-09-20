@@ -11,8 +11,8 @@
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard  --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
     "pretest": "npm run lint",
-    "test": "mocha --require @babel/register",
-    "coverage": "npx nyc --reporter=html npm run test && npx http-server coverage",
+    "test": "mocha --require @babel/register './@(test|src)/**/*.spec.js'",
+    "coverage": "npx nyc --exclude '**/*.spec.js' --reporter=html npm run test && npx http-server coverage",
     "doc": "npx jsdoc --recurse --destination ./doc --package ./package.json src && npx http-server doc"
   },
   "keywords": [
