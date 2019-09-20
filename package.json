@@ -10,6 +10,7 @@
     "serve": "node ./dist/index.js",
     "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
     "lint:fix": "standard  --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
+    "pretest": "npm run lint",
     "test": "mocha --require @babel/register",
     "coverage": "npx nyc --reporter=html npm run test && npx http-server coverage"
   },
