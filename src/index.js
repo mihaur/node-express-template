@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import { allCaps } from './utils'
 
 /**
  * @function greeter
@@ -8,7 +9,7 @@ import 'dotenv/config'
  *
  * @param {String} [name=process.env.GREETING] - name to append to greeting, name is capitalized
  * @returns {String} 'Hello, Name!' greeting
- * @throws {TypeError} string expected, got type
+ * @throws {TypeError} wrong parameter type, string expected
  *
  * @example
  * // Generate default greeting (depending on process.env.GREETING)
@@ -29,9 +30,7 @@ import 'dotenv/config'
 
 export default function greeter (name = process.env.GREETING) {
   if (typeof name !== 'string') {
-    throw new TypeError('string expected, got ' + typeof name)
+    throw new TypeError('wrong parameter type, string expected')
   }
-  return { greeting: `Hello, ${name.charAt(0).toUpperCase() + name.slice(1)}!` }
+  return { greeting: `Hello, ${allCaps(name)}!` }
 }
-
-module.exports = greeter
