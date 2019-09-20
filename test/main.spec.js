@@ -25,13 +25,11 @@ describe('index test', () => {
     same(response, { greeting: 'Hello, 🦉!' })
   })
 
-  test('should return an empty object { }', async () => {
-    const response = greeter(123)
-    same(response, { })
+  test('should throw TypeError', async () => {
+    assert.throws(greeter.bind(greeter, 123), TypeError('string expected, got number'))
   })
 
-  test('should return an empty object { }', async () => {
-    const response = greeter(null)
-    same(response, { })
+  test('should throw TypeError', async () => {
+    assert.throws(greeter.bind(greeter, null), TypeError('string expected, got object'))
   })
 })
