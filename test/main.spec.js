@@ -4,7 +4,20 @@ import { it as test } from 'mocha'
 
 const same = (x, y) => assert.deepStrictEqual(x, y)
 
-describe('index test', () => {
+describe('greeting test', () => {
+  test('should greet with Hello, World!', async () => {
+    const response = greeter()
+    same(response, { greeting: 'Hello, World!' })
+  })
+
+  test('should greet with Hello, Mars!', async () => {
+    const oldGreeting = process.env.GREETING
+    process.env.GREETING = 'Mars'
+    const response = greeter()
+    process.env.GREETING = oldGreeting
+    same(response, { greeting: 'Hello, Mars!' })
+  })
+
   test('should greet with Hello, World!', async () => {
     const response = greeter()
     same(response, { greeting: 'Hello, World!' })
