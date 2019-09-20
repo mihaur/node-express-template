@@ -8,6 +8,9 @@ yarn-error.log*
 # babel build directory
 dist
 
+# JSdoc output directory
+doc
+
 # Runtime data
 pids
 *.pid
