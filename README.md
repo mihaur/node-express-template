@@ -63,11 +63,11 @@ Unit tests are stored in src/**.spec.js.
 Integration tests are stored in test/**.spec.js.
 
 #### Coverage tests
-Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using html formatter, from where it's served using [http-server][http-server-url] on [localhost:8080][localhost-url].
+Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using HTML and lcov formatters. Use `npx http-server coverage` to serve generated HTML.
 
 ### Documentation
 
-Run `npm run doc` to create HTML documentation from JSDoc annotations. Documentation is stored in doc/ directory, from where it's served using [http-server][http-server-url] on [localhost:8080][localhost-url].
+Run `npm run doc` to create HTML documentation from JSDoc annotations. Documentation is stored in doc/ directory. Use `npx http-server coverage` to serve generated documentation.
 
 [babel-url]: https://babeljs.io/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
@@ -78,9 +78,7 @@ Run `npm run doc` to create HTML documentation from JSDoc annotations. Documenta
 [github-actions-url]: https://github.com/features/actions
 [greenkeeper-image]: https://badges.greenkeeper.io/mihaur/node-server-template.svg
 [greenkeeper-url]: https://greenkeeper.io/
-[http-server-url]: https://github.com/http-party/http-server
 [jsdoc-url]: https://devdocs.io/
-[localhost-url]: http://localhost:8080/
 [mocha-url]: https://mochajs.org/
 [node-doc-url]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [node-url]: https://nodejs.org/en/
