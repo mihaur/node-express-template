@@ -4,6 +4,7 @@
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 ![GitHub Actions CI][github-action-node-ci-url]
+[![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
 Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
 
@@ -12,7 +13,9 @@ Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon
 * automatic reloading via [nodemon][nodemon-url]
 * linting and fixing via [standard][standard-url]
 * latest ECMAScript2015+ support via [babel 7][babel-url]
-* unit and integration tests with [mocha][mocha-url], and coverage tests by [nyc][nyc-url]
+* unit and integration tests with [mocha][mocha-url]
+* coverage tests by [nyc][nyc-url]
+* code coverage tracking with [coveralls][coveralls-url]
 * load .env to environment via [dotenv][dotenv-url]
 * continuous integration via [Github Actions CI][github-actions-url]
 * code documentation via JSDoc [JSDoc][jsdoc-url] 
@@ -72,6 +75,9 @@ Run `npm run doc` to create HTML documentation from JSDoc annotations. Documenta
 [babel-url]: https://babeljs.io/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventional-commits-url]: https://conventionalcommits.org/
+[coveralls-url]: https://coveralls.io/
+[coveralls-repo-url]: https://coveralls.io/github/mihaur/node-server-template?branch=master
+[coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-server-template/badge.svg?branch=master
 [dotenv-url]: https://github.com/motdotla/dotenv
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-node-ci-url]: https://github.com/mihaur/node-server-template/workflows/Node%20CI/badge.svg
