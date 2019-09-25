@@ -12,10 +12,10 @@
  * @example
  * // Generate default greeting (depending on process.env.GREETING)
  * const result = allCaps('tesT mE')
- * //=> Test Me
+ * // => Test Me
 */
 
-const allCaps = str => {
+export const allCaps = str => {
   if (typeof str !== 'string') {
     throw new TypeError('wrong parameter type, string expected')
   }
@@ -23,5 +23,3 @@ const allCaps = str => {
   return str.split(' ')
     .map(s => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()).join(' ')
 }
-
-module.exports.allCaps = allCaps
