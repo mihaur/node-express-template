@@ -12,7 +12,7 @@
  * @example
  * // Generate default greeting (depending on process.env.GREETING)
  * const result = allCaps('tesT mE')
- * //=> Test Me
+ * // => Test Me
 */
 
 export const allCaps = str => {
