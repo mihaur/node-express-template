@@ -66,11 +66,11 @@ Unit tests are stored in src/**.spec.js.
 Integration tests are stored in test/**.spec.js.
 
 #### Coverage tests
-Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using HTML and lcov formatters. Use `npx http-server coverage` to serve generated HTML.
+Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using HTML and lcov formatters. Use `npx serve coverage` to serve generated HTML.
 
 ### Documentation
 
-Run `npm run doc` to create HTML documentation from JSDoc annotations. Documentation is stored in doc/ directory. Use `npx http-server coverage` to serve generated documentation.
+Run `npm run doc` to create HTML documentation from JSDoc annotations. Documentation is stored in doc/ directory. Use `npx serve coverage` to serve generated documentation.
 
 [babel-url]: https://babeljs.io/
 [conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
