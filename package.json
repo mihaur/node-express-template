@@ -1,6 +1,6 @@
 {
   "name": "node-server-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Node.js server with babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.",
   "main": "src/index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "debug": "node --inspect-brk ./dist/index.js",
     "build": "babel src --out-dir ./dist --source-maps",
     "serve": "node ./dist/index.js",
-    "lint": "standard --verbose | snazzy && echo 'JavaScript Standard Style lint complete.'",
-    "lint:fix": "standard  --verbose --fix | snazzy && echo 'JavaScript Standard Style fix complete.'",
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard  --verbose --fix | snazzy",
     "pretest": "npm run lint",
     "test": "mocha --require @babel/register './@(test|src)/**/*.spec.js'",
     "coverage": "npx nyc --exclude '**/*.spec.js' --reporter=lcovonly --reporter=html npm run test",
@@ -43,6 +43,7 @@
     "mocha": "^6.2.2",
     "nodemon": "^1.19.2",
     "nyc": "^14.1.1",
+    "pre-commit": "^1.2.2",
     "snazzy": "^8.0.0",
     "standard": "*"
   },
@@ -54,6 +55,10 @@
       "dist"
     ]
   },
+  "precommit": [
+    "lint",
+    "test"
+  ],
   "directories": {
     "test": "test"
   }
