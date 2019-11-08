@@ -10,15 +10,16 @@ Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon
 
 ## All features
 
-* automatic reloading via [nodemon][nodemon-url]
-* linting and fixing via [standard][standard-url]
-* latest ECMAScript2015+ support via [babel 7][babel-url]
-* unit and integration tests with [mocha][mocha-url]
-* coverage tests by [nyc][nyc-url]
-* code coverage tracking with [coveralls][coveralls-url]
-* load .env to environment via [dotenv][dotenv-url]
-* continuous integration via [Github Actions CI][github-actions-url]
-* code documentation via JSDoc [JSDoc][jsdoc-url] 
+* automatic reloading using [nodemon][nodemon-url]
+* linting and fixing using [standard][standard-url]
+* git pre-commit hooks using [husky][husky-url] and [lint-staged][lint-staged-url]
+* latest ECMAScript2015+ support using [babel 7][babel-url]
+* unit and integration tests using [mocha][mocha-url]
+* coverage tests using [nyc][nyc-url]
+* code coverage tracking using [coveralls][coveralls-url]
+* load .env to environment using [dotenv][dotenv-url]
+* continuous integration using [Github Actions CI][github-actions-url]
+* code documentation using JSDoc [JSDoc][jsdoc-url] 
 
 ## Getting Started
 
@@ -94,3 +95,5 @@ Run `npm run doc` to create HTML documentation from JSDoc annotations. Documenta
 [snazzy-url]: https://github.com/standard/snazzy
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
+[husky-url]: https://github.com/typicode/husky
+[lint-staged-url]: https://github.com/okonet/lint-staged

@@ -10,7 +10,6 @@
     "serve": "node ./dist/index.js",
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard  --verbose --fix | snazzy",
-    "pretest": "npm run lint",
     "test": "mocha --require @babel/register './@(test|src)/**/*.spec.js'",
     "coverage": "npx nyc --exclude '**/*.spec.js' --reporter=lcovonly --reporter=html npm run test",
     "doc": "npx jsdoc --recurse --destination ./doc --package ./package.json src"
@@ -40,10 +39,11 @@
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.2",
     "nyc": "^14.1.1",
-    "pre-commit": "^1.2.2",
     "snazzy": "^8.0.0",
     "standard": "*"
   },
@@ -55,10 +55,18 @@
       "dist"
     ]
   },
-  "precommit": [
-    "lint",
-    "test"
-  ],
+  "lint-staged": {
+    "(src|test)/**/*.js": [
+      "standard . --fix | snazzy",
+      "mocha --require @babel/register --bail './@(test|src)/**/*.spec.js'",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "directories": {
     "test": "test"
   }
