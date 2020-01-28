@@ -1,4 +1,4 @@
-# Minimal Node.js Server Template
+# Minimal Node.js Express based Server Template
 
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
