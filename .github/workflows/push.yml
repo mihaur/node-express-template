@@ -1,4 +1,4 @@
-name: Node CI
+name: Node.JS CI
 
 on: 
   push:
@@ -17,13 +17,12 @@ jobs:
         node-version: [14, 12]
         os: [ubuntu-latest]
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
     - name: npm install and test
       run: |
         npm install
