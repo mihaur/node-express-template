@@ -3,7 +3,7 @@
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
 [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
-![GitHub Actions CI][github-action-node-ci-url]
+![GitHub Actions CI][github-action-nodejs-ci-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
 Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
@@ -81,7 +81,7 @@ Run `npm run doc` to create HTML documentation from JSDoc annotations. Documenta
 [coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-server-template/badge.svg?branch=master
 [dotenv-url]: https://github.com/motdotla/dotenv
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-[github-action-node-ci-url]: https://github.com/mihaur/node-server-template/workflows/Node%20CI/badge.svg
+[github-action-nodejs-ci-url]: https://github.com/mihaur/node-server-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions
 [greenkeeper-image]: https://badges.greenkeeper.io/mihaur/node-server-template.svg
 [greenkeeper-url]: https://greenkeeper.io/

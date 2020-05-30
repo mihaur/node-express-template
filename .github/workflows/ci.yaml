@@ -35,9 +35,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and test
+    - name: npm install
       run: |
         npm install
+    - name: npm test
+      run: |
         npm run coverage
       env:
         CI: true
@@ -47,4 +49,3 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.github_token }}
-
