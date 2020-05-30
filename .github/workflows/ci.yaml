@@ -10,12 +10,12 @@ on:
     - master
     
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: [12, 14]
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macOS-latest]
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
@@ -44,8 +44,19 @@ jobs:
       env:
         CI: true
         GREETING: "World"
-
-    - name: Coveralls
+    - name: Coveralls Parallel
       uses: coverallsapp/github-action@master
       with:
-        github-token: ${{ secrets.github_token }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
+        parallel: true
+
+  coverage:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
