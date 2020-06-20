@@ -1,4 +1,4 @@
-# Minimal Node.js Server Template
+# Node.js API server based on express project template
 
 [![js-standard-style][standard-image]][standard-url]
 [![Conventional Commits][conventional-commits-image]][conventional-commits-url]
@@ -6,13 +6,13 @@
 ![GitHub Actions CI][github-action-nodejs-ci-url]
 [![Coverage Status][coveralls-badge-url]][coveralls-repo-url]
 
-Simple Node.js server with GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
+Node.js API server/backend build with [Express.js][expressjs-url], GitHub Actions build, babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.
 
 ## All features
 
 * automatic reloading using [nodemon][nodemon-url]
 * linting and fixing using [standard][standard-url]
-* git pre-commit hooks using [husky][husky-url] and [lint-staged][lint-staged-url]
+* git pre-commit hooks using [husky][husky-url] and [lint-stagehttps://expressjs.com/https://expressjs.com/d][lint-staged-url]
 * latest ECMAScript2015+ support using [babel 7][babel-url]
 * unit and integration tests using [mocha][mocha-url]
 * coverage tests using [nyc][nyc-url]
@@ -80,6 +80,7 @@ Run `npm run doc` to create HTML documentation from JSDoc annotations. Documenta
 [coveralls-repo-url]: https://coveralls.io/github/mihaur/node-server-template?branch=master
 [coveralls-badge-url]: https://coveralls.io/repos/github/mihaur/node-server-template/badge.svg?branch=master
 [dotenv-url]: https://github.com/motdotla/dotenv
+[expressjs-url]: https://expressjs.com/
 [git-book-url]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-action-nodejs-ci-url]: https://github.com/mihaur/node-server-template/workflows/Node.JS%20CI/badge.svg
 [github-actions-url]: https://github.com/features/actions

@@ -1,7 +1,7 @@
 {
-  "name": "node-server-template",
+  "name": "node-express-template",
   "version": "1.0.1",
-  "description": "Simple Node.js server with babel, minimal tooling (nodemon, standard), and mocha tests. Can be used as a template to quickly bootstrap yor Node.js server projects.",
+  "description": "Node.js API server based on express project template.",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./src/index.js",
@@ -17,20 +17,24 @@
   "keywords": [
     "node",
     "nodejs",
+    "API",
+    "backend",
     "server",
+    "express",
+    "expressjs",
     "template",
     "boilerplate"
   ],
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
-  "license": "Apache-2.0",
+  "license": "Apache-2.0 WITH LLVM-exception",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mihaur/node-server-template.git"
+    "url": "git+https://github.com/mihaur/node-express-template.git"
   },
   "bugs": {
-    "url": "https://github.com/mihaur/node-server-template/issues"
+    "url": "https://github.com/mihaur/node-express-template/issues"
   },
-  "homepage": "https://github.com/mihaur/node-server-template#readme",
+  "homepage": "https://github.com/mihaur/node-express-template#readme",
   "dependencies": {
     "dotenv": "^8.2.0"
   },
@@ -58,8 +62,7 @@
   "lint-staged": {
     "(src|test)/**/*.js": [
       "standard . --fix | snazzy",
-      "mocha --require @babel/register --bail './@(test|src)/**/*.spec.js'",
-      "git add"
+      "mocha --require @babel/register --bail './@(test|src)/**/*.spec.js'"
     ]
   },
   "husky": {
