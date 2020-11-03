@@ -10,6 +10,13 @@ describe('greeting test', () => {
     same(response, { greeting: 'Hello, World!' })
   })
 
+  test('should throw Error', async () => {
+    const oldGreeting = process.env.GREETING
+    delete process.env.GREETING
+    assert.throws(greeter.bind(greeter), Error('GREETING environment variable is not defined'))
+    process.env.GREETING = oldGreeting
+  })
+
   test('should greet with Hello, Mars!', async () => {
     const oldGreeting = process.env.GREETING
     process.env.GREETING = 'Mars'

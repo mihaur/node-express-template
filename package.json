@@ -61,7 +61,7 @@
   },
   "lint-staged": {
     "(src|test)/**/*.js": [
-      "standard . --fix | snazzy",
+      "standard --fix",
       "mocha --require @babel/register --bail './@(test|src)/**/*.spec.js'"
     ]
   },

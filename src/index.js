@@ -29,8 +29,12 @@ import { allCaps } from './utils'
  */
 
 export default function greeter (name = process.env.GREETING) {
+  if (!process.env.GREETING) {
+    throw new Error('GREETING environment variable is not defined')
+  }
   if (typeof name !== 'string') {
     throw new TypeError('wrong parameter type, string expected')
   }
+
   return { greeting: `Hello, ${allCaps(name)}!` }
 }
