@@ -27,14 +27,7 @@
   ],
   "author": "Miha Urbanija <miha.urbanija@gmail.com>",
   "license": "Apache-2.0 WITH LLVM-exception",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mihaur/node-express-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mihaur/node-express-template/issues"
-  },
-  "homepage": "https://github.com/mihaur/node-express-template#readme",
+  "repository": "github:mihaur/node-express-template",
   "dependencies": {
     "dotenv": "^8.2.0"
   },
