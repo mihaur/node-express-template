@@ -12,7 +12,7 @@ Node.js API server/backend build with [Express.js][expressjs-url], GitHub Action
 
 * automatic reloading using [nodemon][nodemon-url]
 * linting and fixing using [standard][standard-url]
-* git pre-commit hooks using [husky][husky-url] and [lint-stagehttps://expressjs.com/https://expressjs.com/d][lint-staged-url]
+* git pre-commit hooks using [husky][husky-url] and [lint-staged][lint-staged-url]
 * latest ECMAScript2015+ support using [babel 7][babel-url]
 * unit and integration tests using [mocha][mocha-url]
 * coverage tests using [nyc][nyc-url]
