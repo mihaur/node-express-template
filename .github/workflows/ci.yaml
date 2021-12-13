@@ -64,6 +64,9 @@ jobs:
   automerge:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
     steps:
       - uses: fastify/github-action-merge-dependabot@v3
         with:
