@@ -18,7 +18,7 @@ Node.js API server/backend build with [Express.js][expressjs-url], GitHub Action
 * coverage tests using [nyc][nyc-url]
 * code coverage tracking using [coveralls][coveralls-url]
 * load .env to environment using [dotenv][dotenv-url]
-* continuous integration using [Github Actions CI][github-actions-url]
+* continuous integration using [GitHub Actions CI][github-actions-url]
 * code documentation using JSDoc [JSDoc][jsdoc-url] 
 
 ## Getting Started
@@ -27,7 +27,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* [node][node-url] with [npm][npm-url]
+* [Node.js][node-url] with [npm][npm-url]
 * [git][git-book-url]
 
 ### Installing
