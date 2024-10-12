@@ -1,62 +1,64 @@
+---
 name: Node.JS CI
 
 on: 
   push:
     branches:
-    - master
-    - 'greenkeeper/*'
+    - main
   pull_request:
     branches:
-    - master
-    
+    - main
+
+permissions: read-all
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [12, 14]
-        os: [ubuntu-latest, macOS-latest]
+        node-version: [18, 20]
+        os: [ubuntu-latest]
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-    - name: Cache node modules
-      uses: actions/cache@v4
-      env:
-        cache-name: cache-node-modules
-      with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-    - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-      uses: actions/setup-node@v4.0.4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run: |
-        npm install
-    - name: npm test
-      run: |
-        npm run coverage
-      env:
-        CI: true
-        GREETING: "World"
-    - name: Coveralls Parallel
-      uses: coverallsapp/github-action@v2.3.1
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
-        parallel: true
+      - name: Checkout repo
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871
+      - name: Cache node modules
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+        uses: actions/setup-node@v4.0.4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm Install dependencies
+        run: |
+          npm ci
+      - name: Run coverage
+        run: |
+          npm run coverage
+        env:
+          CI: true
+          GREETING: "World"
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@1134c89e4bf10443bf8f0ec69640b667cfd91041
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: run-${{ matrix.os }}-${{ matrix.node-version }}
+          parallel: true
 
   coverage:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@v2.3.1
+        uses: coverallsapp/github-action@1134c89e4bf10443bf8f0ec69640b667cfd91041
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
@@ -68,6 +70,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3
+      - uses: fastify/github-action-merge-dependabot@0fa926bf56cf573a599afcc6d39b25b734fd6252
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
