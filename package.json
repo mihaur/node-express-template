@@ -39,7 +39,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "mocha": "^11.0.1",
-    "nodemon": "^3.1.7",
+    "nodemon": "^3.1.9",
     "nyc": "^17.1.0",
     "snazzy": "^9.0.0",
     "standard": "*"
