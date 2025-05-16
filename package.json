@@ -38,7 +38,7 @@
     "@babel/preset-env": "^7.26.9",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "mocha": "^11.1.0",
+    "mocha": "^11.3.0",
     "nodemon": "^3.1.9",
     "nyc": "^17.1.0",
     "snazzy": "^9.0.0",
