@@ -67,7 +67,7 @@ Unit tests are stored in src/**.spec.js.
 Integration tests are stored in test/**.spec.js.
 
 #### Coverage tests
-Run `npm run coverage` to generate test coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using HTML and lcov formatters. Use `npx serve coverage` to serve generated HTML.
+Run `npm run coverage:lcov` to generate test lcov coverage report. Both unit and integration tests are run. Report is generated in coverage/ directory using HTML and lcov formatters. Use `npx serve coverage` to serve generated HTML.
 
 ### Documentation
 
