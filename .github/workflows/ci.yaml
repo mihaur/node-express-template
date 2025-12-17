@@ -1,13 +1,13 @@
 ---
 name: Node.JS CI
 
-on: 
+on: # yamllint disable-line rule:truthy
   push:
-    branches:
-    - main
+    paths-ignore:
+      - "*.md"
   pull_request:
-    branches:
-    - main
+    paths-ignore:
+      - "*.md"
 
 permissions: read-all
 
@@ -16,13 +16,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [22]
         os: [ubuntu-latest]
     steps:
       - name: Checkout repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Cache node modules
-        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a
+        uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57
         env:
           cache-name: cache-node-modules
         with:
@@ -34,15 +34,15 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm Install dependencies
+      - name: Install dependencies
         run: |
           npm ci
-      - name: Run coverage
+      - name: Run tests
         run: |
-          npm run coverage
+          npm run coverage:lcov
         env:
           CI: true
           GREETING: "World"
@@ -64,6 +64,9 @@ jobs:
           parallel-finished: true
 
   automerge:
+    if: >
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.user.login == 'dependabot[bot]'
     needs: test
     runs-on: ubuntu-latest
     permissions:

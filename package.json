@@ -11,7 +11,7 @@
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard  --verbose --fix | snazzy",
     "test": "mocha --require @babel/register './@(test|src)/**/*.spec.js'",
-    "coverage": "npx nyc --exclude '**/*.spec.js' --reporter=lcovonly --reporter=html npm run test",
+    "coverage:lcov": "npx nyc --exclude '**/*.spec.js' --reporter=lcovonly --reporter=html npm run test",
     "doc": "npx jsdoc --recurse --destination ./doc --package ./package.json src"
   },
   "keywords": [
