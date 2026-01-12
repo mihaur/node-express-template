@@ -35,7 +35,7 @@
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.28.6",
     "@babel/node": "^7.28.6",
-    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-env": "^7.28.6",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "mocha": "^11.1.0",
