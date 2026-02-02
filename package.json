@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.28.6",
+    "@babel/core": "^7.29.0",
     "@babel/node": "^7.28.6",
     "@babel/preset-env": "^7.29.0",
     "husky": "^9.1.7",
