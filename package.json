@@ -29,7 +29,7 @@
   "license": "Apache-2.0 WITH LLVM-exception",
   "repository": "github:mihaur/node-express-template",
   "dependencies": {
-    "dotenv": "^17.3.1"
+    "dotenv": "^17.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.6",
